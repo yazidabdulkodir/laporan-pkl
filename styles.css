@@ -1,16 +1,6 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto; /* Sesuaikan tinggi sesuai kebutuhan */
-  background-color: rgba(255, 255, 255, 0.5); /* Warna putih dengan transparansi 50% */
-  z-index: 9999; /* Pastikan overlay berada di atas elemen lain */
-}
-
 .floating-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   right: 20px;
   border-radius: 50%;
   width: 50px;
@@ -304,8 +294,8 @@ h2 {
 .spesial-diskon {
   font-size: 1rem;
   font-weight: bold;
-  color: #e74c3c;
-  background: #f1c40f;
+  color: #e5331f;
+  background: #ffea00;
   padding: 10px 300px;
   text-align: center;
   border-radius: 8px;
@@ -577,6 +567,10 @@ h2 {
     margin-bottom: 50px;
   }
 
+  #pricing h2 {
+    font-size: 1.8em;
+  }
+
   .package,
   .package-premium {
     width: 90%;
@@ -658,7 +652,7 @@ h2 {
     width: 80%; /* Adjust the width to fit better on small screens */
     margin: 20px auto; /* Center the container with margin */
     padding: 15px; /* Adjust padding for better spacing */
-    background-color: #ffff00; /* Keep background color */
+    background-color: #ffea00; /* Keep background color */
     border-radius: 8px; /* Smooth border */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
   }
