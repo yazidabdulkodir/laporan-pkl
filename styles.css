@@ -292,19 +292,40 @@ h2 {
 }
 
 .spesial-diskon {
+  position: relative; /* Agar pseudo-element bisa diposisikan relatif terhadap elemen ini */
   font-size: 1rem;
   font-weight: bold;
-  color: #e5331f;
-  background: #ffea00;
-  padding: 10px 300px;
+  color: #ffff00;
+  background: linear-gradient(to right, #00f9ff, #bc13fe); /* Biru Neon dan Ungu Neon */
+  padding: 10px 50px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* margin: 20px auto; */
   display: inline-block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: +50px;
+  margin-bottom: 50px;
   animation: pulse 1.5s infinite;
+}
+
+/* Pseudo-element untuk shadow gradient */
+.spesial-diskon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px; /* Sama dengan elemen utama */
+  z-index: -1; /* Pastikan pseudo-element berada di belakang */
+  background: linear-gradient(to right, #00f9ff, #bc13fe); /* Gradient dari kiri ke kanan */
+  filter: blur(20px); /* Memberikan efek shadow dengan blur */
+  opacity: 0; /* Shadow tidak terlihat saat normal */
+  transition: opacity 0.3s ease;
+}
+
+/* Efek hover untuk menunjukkan shadow */
+.spesial-diskon:hover::before {
+  opacity: 1; /* Shadow akan terlihat saat di-hover */
+  transform: scale(1.1); /* Sedikit memperbesar untuk efek glowing */
 }
 
 @keyframes pulse {
@@ -317,11 +338,6 @@ h2 {
   100% {
     transform: scale(1);
   }
-}
-
-.spesial-diskon:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .pricing-grid {
@@ -381,8 +397,7 @@ h2 {
   margin-top: 5px;
 }
 
-.package .btn,
-.package-premium .btn {
+.package .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
@@ -393,21 +408,47 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.package .btn:hover,
+.package-premium .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #ffe96e, #ffd700); /* Gradient kuning */
+  color: #333; /* Teks warna gelap untuk kontras */
+  border: 2px solid #ffd700; /* Border kuning emas */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), /* Shadow untuk kedalaman */ inset 1px 1px 2px rgba(255, 255, 255, 0.5); /* Highlight glossy */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
 .package-premium .btn:hover {
+  background: linear-gradient(145deg, #ffd700, #ffe96e); /* Gradient terbalik saat hover */
+  color: #fff; /* Warna teks putih saat hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), /* Shadow lebih gelap saat hover */ inset 1px 1px 3px rgba(255, 255, 255, 0.7); /* Highlight glossy lebih terang */
+}
+
+.package .btn:hover {
   background-color: #0056b3;
 }
 
 /* Special styling for Premium package */
 .package-premium {
-  background-color: #444;
-  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.5);
+  background-color: #232323; /* Abu-abu Gelap */
+
   flex-shrink: 1; /* If using Flexbox */
 }
 
 .package-premium .premium {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 98, 255, 0.7), 0 0 20px rgba(0, 98, 255, 0.5), 0 0 30px rgba(0, 98, 255, 0.3);
+  color: #ffd700; /* Kuning Tua */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), /* Bayangan Glossy */ 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  background: linear-gradient(to bottom, #ffffff, #ffd700); /* Efek Glossy */
+  -webkit-background-clip: text;
+  background-clip: text; /* Properti standar */
+  -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -652,7 +693,8 @@ h2 {
     width: 80%; /* Adjust the width to fit better on small screens */
     margin: 20px auto; /* Center the container with margin */
     padding: 15px; /* Adjust padding for better spacing */
-    background-color: #ffea00; /* Keep background color */
+    background: linear-gradient(to right, #00f9ff, #bc13fe);
+    /* Keep background color */
     border-radius: 8px; /* Smooth border */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
   }
