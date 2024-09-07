@@ -118,7 +118,7 @@ body {
 
 #features {
   padding: 50px 0;
-  background-color: #f7f9fc; /* Light background for contrast */
+  background-color: #f0f0f0; /* Light background for contrast */
   text-align: center;
   padding-top: 4rem;
 }
@@ -152,19 +152,13 @@ body {
 }
 
 .feature {
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: rgb(255, 255, 255, 0);
+
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   flex: 1;
   min-width: 250px; /* Responsive width */
-}
-
-.feature:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Intense shadow on hover */
 }
 
 .feature img {
@@ -197,7 +191,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f9fc;
+  background-color: #f0f0f0;
 }
 
 #how-it-works h2 {
@@ -279,7 +273,7 @@ h2 {
 
 #pricing {
   padding-top: 3rem;
-  background-color: #f7f9fc;
+  background-color: #f0f0f0;
   text-align: center;
 }
 
@@ -355,7 +349,7 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 1;
   min-width: 250px;
@@ -364,7 +358,6 @@ h2 {
 .package:hover,
 .package-premium:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 .package h3,
@@ -426,6 +419,7 @@ h2 {
   background: linear-gradient(145deg, #ffd700, #ffe96e); /* Gradient terbalik saat hover */
   color: #fff; /* Warna teks putih saat hover */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), /* Shadow lebih gelap saat hover */ inset 1px 1px 3px rgba(255, 255, 255, 0.7); /* Highlight glossy lebih terang */
+  transition: color 0.3s ease;
 }
 
 .package .btn:hover {
